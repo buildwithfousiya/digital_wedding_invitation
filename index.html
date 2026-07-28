@@ -1455,6 +1455,73 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
+      /* — Background music autoplay controller — */
+      const audio = document.getElementById('bg-music');
+      const muteBtn = document.getElementById('mute-btn');
+      const iconSound = document.getElementById('icon-sound');
+      const iconMuted = document.getElementById('icon-muted');
+
+      let musicStarted = false;
+
+      function startMusic() {
+        if (!musicStarted) {
+          audio.volume = 0.45;
+          audio.play()
+            .then(() => {
+              musicStarted = true;
+              iconSound.style.display = '';
+              iconMuted.style.display = 'none';
+            })
+            .catch((err) => {
+              console.log("Autoplay blocked or failed:", err);
+            });
+        }
+      }
+
+      // Mute / unmute toggle
+      muteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!musicStarted) {
+          audio.volume = 0.45;
+          audio.play()
+            .then(() => {
+              musicStarted = true;
+              iconSound.style.display = '';
+              iconMuted.style.display = 'none';
+            })
+            .catch((err) => {
+              console.log("Play failed:", err);
+            });
+        } else {
+          if (audio.paused) {
+            audio.play();
+            iconSound.style.display = '';
+            iconMuted.style.display = 'none';
+          } else {
+            audio.pause();
+            iconSound.style.display = 'none';
+            iconMuted.style.display = '';
+          }
+        }
+      });
+
+      // Listeners for general interaction as fallbacks
+      document.addEventListener('click', startMusic, { once: true });
+      document.addEventListener('scroll', startMusic, { once: true });
+      document.addEventListener('touchstart', startMusic, { once: true });
+
+      // Try immediate play on window load
+      window.addEventListener('load', () => {
+        audio.volume = 0.45;
+        audio.play()
+          .then(() => {
+            musicStarted = true;
+            iconSound.style.display = '';
+            iconMuted.style.display = 'none';
+          })
+          .catch(() => {});
+      });
+
       /* — Opening Invitation Transition — */
       (function () {
         const loader = document.getElementById('bismillah-loader');
@@ -1468,6 +1535,9 @@
           if (dismissed) return;
           dismissed = true;
           clearTimeout(autoDismiss);
+
+          // Force play music on this direct user gesture
+          startMusic();
 
           // 1. Loader blurs and fades away
           loader.classList.add('exit');
@@ -1502,45 +1572,6 @@
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-      /* — Background music autoplay — */
-      const audio = document.getElementById('bg-music');
-      const muteBtn = document.getElementById('mute-btn');
-      const iconSound = document.getElementById('icon-sound');
-      const iconMuted = document.getElementById('icon-muted');
-
-      // Attempt autoplay on first user interaction (browser policy)
-      let started = false;
-      function startMusic() {
-        if (!started) {
-          audio.volume = 0.45;
-          audio.play().catch(() => { }); // silently fail if still blocked
-          started = true;
-        }
-      }
-      document.addEventListener('click', startMusic, { once: true });
-      document.addEventListener('scroll', startMusic, { once: true });
-      document.addEventListener('touchstart', startMusic, { once: true });
-
-      // Also try immediate autoplay (works on some browsers / after reload)
-      window.addEventListener('load', () => {
-        audio.volume = 0.45;
-        audio.play().then(() => { started = true; }).catch(() => { });
-      });
-
-      // Mute / unmute toggle
-      muteBtn.addEventListener('click', () => {
-        startMusic();
-        if (audio.paused) {
-          audio.play();
-          iconSound.style.display = '';
-          iconMuted.style.display = 'none';
-        } else {
-          audio.pause();
-          iconSound.style.display = 'none';
-          iconMuted.style.display = '';
-        }
-      });
     </script>
   </div><!-- /#page-wrap -->
 </body>
