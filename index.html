@@ -32,7 +32,7 @@
   <meta property="og:description"
     content="You are warmly invited to the Wedding of Sharafali &amp; Fasna on Thursday, August 20, 2026. Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna. Wedding Reception: 12:00 PM at PCM Auditorium, Valiyora, Vengara." />
   <meta property="og:url" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/" />
-  <meta property="og:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/og-image.jpg" />
+  <meta property="og:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/hero.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -44,7 +44,7 @@
   <meta name="twitter:title" content="Sharafali &amp; Fasna — Wedding Invitation" />
   <meta name="twitter:description"
     content="You are warmly invited to the Wedding of Sharafali &amp; Fasna on Thursday, August 20, 2026. Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna. Wedding Reception: 12:00 PM at PCM Auditorium, Valiyora, Vengara." />
-  <meta name="twitter:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/og-image.jpg" />
+  <meta name="twitter:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/hero.jpg" />
   <meta name="twitter:image:alt" content="Sharafali &amp; Fasna Wedding Invitation" />
 
   <!-- Canonical URL — root, no /index.html -->
@@ -1084,6 +1084,257 @@
     #mute-btn svg {
       pointer-events: none;
     }
+
+    /* === GUEST GREETING === */
+    .ld-guest-wrap {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      animation: ldFadeIn 0.8s ease 1.0s forwards;
+      opacity: 0;
+    }
+    .ld-guest-label {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8E6F62;
+    }
+    .ld-guest-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #51130C;
+      margin-top: 0.2rem;
+    }
+
+    /* === SHARE BUTTON === */
+    #share-btn {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      z-index: 10000;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(81, 19, 12, 0.88);
+      border: 1.5px solid var(--gold-light);
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+      transition: background 0.3s, transform 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    #share-btn:hover {
+      background: var(--green-light);
+      transform: scale(1.08);
+    }
+    #share-btn svg {
+      pointer-events: none;
+    }
+
+    /* === SHARE MODAL CSS === */
+    .share-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: rgba(36, 19, 18, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .share-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .share-modal-content {
+      background: var(--off-white);
+      border: 1px solid var(--gold);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 480px;
+      padding: 2.2rem 2rem 2rem;
+      box-shadow: 0 20px 50px rgba(81, 19, 12, 0.25);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .share-modal-overlay.active .share-modal-content {
+      transform: translateY(0);
+    }
+
+    .share-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.4rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .share-modal-close:hover {
+      color: var(--green);
+    }
+
+    .share-modal-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .share-modal-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-bottom: 1.6rem;
+      line-height: 1.5;
+    }
+
+    .share-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.4rem;
+      text-align: left;
+    }
+
+    .share-input-group label,
+    .share-preview-group label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .share-input-group input {
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: #FFF;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .share-input-group input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200, 163, 90, 0.15);
+    }
+
+    .share-preview-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .share-preview-box {
+      padding: 1rem;
+      background: var(--ivory-dark);
+      border: 1px dashed var(--gold);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      white-space: pre-wrap;
+      max-height: 140px;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .share-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .share-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .share-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .wa-btn {
+      background: #25D366;
+      color: #FFF;
+      border: 1px solid #25D366;
+    }
+
+    .wa-btn:hover {
+      background: #20ba59;
+      border-color: #20ba59;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .native-btn {
+      background: var(--green);
+      color: var(--ivory);
+      border: 1px solid var(--green);
+    }
+
+    .native-btn:hover {
+      background: var(--green-light);
+      border-color: var(--green-light);
+      box-shadow: 0 4px 14px rgba(81, 19, 12, 0.3);
+    }
+
+    .share-toast {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(36, 19, 18, 0.9);
+      color: var(--gold-light);
+      padding: 0.6rem 1.6rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid var(--gold);
+      animation: toastFadeIn 0.3s ease forwards;
+      white-space: nowrap;
+      z-index: 100002;
+    }
+
+    @keyframes toastFadeIn {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
   </style>
 </head>
 
@@ -1116,6 +1367,12 @@
     <!-- The invitation card -->
     <div class="ld-envelope">
       <div class="ld-card">
+
+        <!-- Guest greeting -->
+        <div id="ld-guest-wrap" class="ld-guest-wrap" style="display: none;">
+          <p class="ld-guest-label">Specially Invited Guest</p>
+          <p class="ld-guest-name" id="ld-guest-name"></p>
+        </div>
 
         <!-- top gold bar -->
         <div class="ld-card-bar"></div>
@@ -1183,6 +1440,58 @@
     </svg>
   </button>
 
+  <!-- Share button — fixed bottom-right, always visible -->
+  <button id="share-btn" aria-label="Share invitation" title="Share invitation">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+  </button>
+
+  <!-- Share Modal -->
+  <div id="share-modal" class="share-modal-overlay" style="display: none;">
+    <div class="share-modal-content">
+      <button class="share-modal-close" id="share-modal-close" aria-label="Close modal">&times;</button>
+      <h3 class="share-modal-title">Share Invitation</h3>
+      <p class="share-modal-desc">Create a personalized link and custom message to invite friends & family.</p>
+      
+      <div class="share-input-group">
+        <label for="share-guest-name">Guest Name (Optional)</label>
+        <input type="text" id="share-guest-name" placeholder="e.g. Adhil & Family" autocomplete="off" />
+      </div>
+
+      <div class="share-preview-group">
+        <label>Message Preview</label>
+        <div class="share-preview-box" id="share-preview-box"></div>
+      </div>
+
+      <div class="share-actions">
+        <button id="share-wa-btn" class="share-action-btn wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.233-1.371a9.936 9.936 0 0 0 4.777 1.218h.004c5.505 0 9.988-4.478 9.989-9.985-.001-2.668-1.039-5.176-2.927-7.064C17.192 3.008 14.681 2.002 12.012 2zm5.836 14.199c-.32.899-1.848 1.657-2.531 1.767-.683.11-1.365.179-4.38-1.074-3.856-1.599-6.33-5.524-6.523-5.779-.193-.255-1.545-2.054-1.545-3.913 0-1.859.974-2.775 1.321-3.14.348-.365.759-.456 1.012-.456.253 0 .506.002.727.012.23.01.531-.039.83.679.32.766 1.095 2.668 1.19 2.863.095.195.158.423.029.678-.129.256-.194.412-.387.637-.193.225-.407.502-.581.674-.193.191-.397.399-.171.785.226.386.997 1.637 2.14 2.656 1.47 1.31 2.709 1.714 3.092 1.905.383.19.608.158.832-.1.225-.258.961-1.121 1.216-1.503.255-.382.509-.318.857-.19.348.127 2.213 1.042 2.593 1.233.38.19.633.285.727.447.095.162.095.941-.225 1.84z"/>
+          </svg>
+          WhatsApp
+        </button>
+        <button id="share-native-btn" class="share-action-btn native-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share Link
+        </button>
+      </div>
+      
+      <div id="share-toast" class="share-toast" style="display: none;">Link copied to clipboard!</div>
+    </div>
+  </div>
+
   <!-- Background music (autoplay, loop) -->
   <div id="page-wrap">
     <audio id="bg-music" loop>
@@ -1203,6 +1512,11 @@
           Fasna
         </div>
         <p class="hero-date">August 20, 2026 &nbsp;·&nbsp; 10:30 AM</p>
+        <!-- Guest greeting on hero if present -->
+        <div id="hero-guest-wrap" style="display: none; margin-top: 1.5rem; text-align: center; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.85s forwards; opacity: 0;">
+          <p style="font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(250, 247, 242, 0.6);">Warm Welcome To</p>
+          <p id="hero-guest-name" style="font-family: var(--font-display); font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-top: 0.3rem; text-shadow: 0 1px 8px rgba(0,0,0,0.5);"></p>
+        </div>
         <a href="#invitation" class="hero-cta">View Details</a>
       </div>
     </section>
@@ -1572,6 +1886,135 @@
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+      /* — Guest Personalization & Invitation Sharing — */
+      const shareBtn = document.getElementById('share-btn');
+      const shareModal = document.getElementById('share-modal');
+      const shareModalClose = document.getElementById('share-modal-close');
+      const shareGuestNameInput = document.getElementById('share-guest-name');
+      const sharePreviewBox = document.getElementById('share-preview-box');
+      const shareWaBtn = document.getElementById('share-wa-btn');
+      const shareNativeBtn = document.getElementById('share-native-btn');
+      const shareToast = document.getElementById('share-toast');
+
+      const baseUrl = window.location.origin + window.location.pathname;
+
+      function getShareData(guestName) {
+        const greeting = "Assalamu Alaikum / Greetings,";
+        let guestGreeting = "";
+        let shareUrl = baseUrl;
+
+        if (guestName.trim()) {
+          const encodedName = encodeURIComponent(guestName.trim());
+          shareUrl += `?to=${encodedName}`;
+          guestGreeting = `\n\nDear *${guestName.trim()}*,`;
+        }
+
+        // Link is at the very top so WhatsApp generates the preview card (with hero image)
+        // at the top, and displays the invitation text under it.
+        const text = `${shareUrl}
+
+${greeting}${guestGreeting}
+
+We cordially invite you to the wedding ceremony of *Sharafali & Fasna*. 
+
+📅 *Thursday, August 20, 2026*
+• Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna
+• Reception: 12:00 PM onwards at PCM Auditorium, Valiyora, Vengara
+
+We look forward to your presence and prayers! ✨`;
+
+        return {
+          title: "Sharafali & Fasna — Wedding Invitation",
+          text: text,
+          url: shareUrl
+        };
+      }
+
+      function updatePreview() {
+        const guestName = shareGuestNameInput.value;
+        const data = getShareData(guestName);
+        // Replace asterisks with bold for HTML preview
+        const htmlPreview = data.text
+          .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+          .replace(/\n/g, '<br>');
+        sharePreviewBox.innerHTML = htmlPreview;
+      }
+
+      shareBtn.addEventListener('click', () => {
+        shareModal.style.display = 'flex';
+        setTimeout(() => shareModal.classList.add('active'), 10);
+        shareGuestNameInput.value = '';
+        updatePreview();
+      });
+
+      function closeModal() {
+        shareModal.classList.remove('active');
+        setTimeout(() => {
+          shareModal.style.display = 'none';
+        }, 300);
+      }
+
+      shareModalClose.addEventListener('click', closeModal);
+      shareModal.addEventListener('click', (e) => {
+        if (e.target === shareModal) closeModal();
+      });
+
+      shareGuestNameInput.addEventListener('input', updatePreview);
+
+      shareWaBtn.addEventListener('click', () => {
+        const guestName = shareGuestNameInput.value;
+        const data = getShareData(guestName);
+        const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(data.text)}`;
+        window.open(waUrl, '_blank');
+      });
+
+      shareNativeBtn.addEventListener('click', () => {
+        const guestName = shareGuestNameInput.value;
+        const data = getShareData(guestName);
+
+        if (navigator.share) {
+          navigator.share({
+            title: data.title,
+            text: data.text
+          })
+          .catch((err) => console.log('Error sharing:', err));
+        } else {
+          navigator.clipboard.writeText(data.text)
+            .then(showToast)
+            .catch((err) => console.error('Could not copy text: ', err));
+        }
+      });
+
+      function showToast() {
+        shareToast.style.display = 'block';
+        setTimeout(() => {
+          shareToast.style.display = 'none';
+        }, 2500);
+      }
+
+      /* — Check Query Parameter for Dynamic Guest Welcome — */
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const toVal = params.get('to') || params.get('name');
+        if (toVal) {
+          const guestName = toVal.trim();
+          
+          const ldGuestWrap = document.getElementById('ld-guest-wrap');
+          const ldGuestName = document.getElementById('ld-guest-name');
+          if (ldGuestWrap && ldGuestName) {
+            ldGuestName.textContent = guestName;
+            ldGuestWrap.style.display = 'block';
+          }
+          
+          const heroGuestWrap = document.getElementById('hero-guest-wrap');
+          const heroGuestName = document.getElementById('hero-guest-name');
+          if (heroGuestWrap && heroGuestName) {
+            heroGuestName.textContent = guestName;
+            heroGuestWrap.style.display = 'block';
+          }
+        }
+      });
     </script>
   </div><!-- /#page-wrap -->
 </body>
