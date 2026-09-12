@@ -215,7 +215,7 @@
       overflow: hidden;
       cursor: pointer;
       /* Same ivory-dark as the site's section backgrounds */
-      background: #ECE4D9;
+      background: #ECE7DE;
     }
 
     /* ── Soft vignette so centre glows ── */
@@ -225,7 +225,7 @@
       z-index: 0;
       pointer-events: none;
       background: radial-gradient(ellipse 70% 65% at 50% 50%,
-          transparent 30%, rgba(81, 19, 12, 0.08) 100%);
+          transparent 30%, rgba(27, 46, 75, 0.08) 100%);
     }
 
     /* ── Botanical watermark — large faded leaves behind everything ── */
@@ -259,11 +259,11 @@
     /* Envelope body card */
     .ld-card {
       width: 100%;
-      background: #F8F5F0;
+      background: #FAF8F5;
       border: 1px solid rgba(200, 163, 90, 0.28);
       box-shadow:
         0 2px 0 rgba(200, 163, 90, 0.28),
-        0 20px 60px rgba(81, 19, 12, 0.13),
+        0 20px 60px rgba(27, 46, 75, 0.12),
         0 4px 16px rgba(200, 163, 90, 0.12);
       padding: clamp(2rem, 6vw, 3.2rem) clamp(1.6rem, 5vw, 3rem) clamp(1.8rem, 5vw, 2.8rem);
       display: flex;
@@ -314,7 +314,7 @@
       text-align: center;
       color: transparent;
       background: linear-gradient(110deg,
-          #6A4C25 0%, #C8A35A 25%, #E5C98A 50%, #C8A35A 75%, #6A4C25 100%);
+          #4A5D78 0%, #C8A35A 25%, #E5C98A 50%, #C8A35A 75%, #4A5D78 100%);
       background-size: 250% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -349,14 +349,14 @@
     .ld-divider-line {
       flex: 1;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #8E6F62, transparent);
+      background: linear-gradient(90deg, transparent, #5B7494, transparent);
     }
 
     /* Names in Great Vibes — same as hero */
     .ld-names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.4rem, 8vw, 4rem);
-      color: #51130C;
+      color: #1B2E4B;
       line-height: 1;
       text-align: center;
       opacity: 0;
@@ -378,7 +378,7 @@
       font-size: clamp(0.7rem, 1.3vw, 0.88rem);
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #6A4C25;
+      color: #4A5D78;
       text-align: center;
       opacity: 0;
       animation: ldFadeIn 0.7s ease 3s forwards;
@@ -411,7 +411,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: #8E6F62;
+      color: #5B7494;
       animation: ldPulse 2.2s ease-in-out 3.8s infinite;
     }
 
@@ -1365,17 +1365,17 @@
     <div class="ld-watermark" aria-hidden="true">
       <svg viewBox="0 0 700 420" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- large background leaves -->
-        <ellipse cx="140" cy="210" rx="38" ry="110" fill="#51130C" opacity="0.07" transform="rotate(-30 140 210)" />
-        <ellipse cx="560" cy="210" rx="38" ry="110" fill="#51130C" opacity="0.07" transform="rotate(30 560 210)" />
-        <ellipse cx="80" cy="100" rx="22" ry="68" fill="#7A1B16" opacity="0.06" transform="rotate(-48 80 100)" />
-        <ellipse cx="620" cy="100" rx="22" ry="68" fill="#7A1B16" opacity="0.06" transform="rotate(48 620 100)" />
-        <ellipse cx="95" cy="330" rx="20" ry="58" fill="#A24F45" opacity="0.05" transform="rotate(-20 95 330)" />
-        <ellipse cx="605" cy="330" rx="20" ry="58" fill="#A24F45" opacity="0.05" transform="rotate(20 605 330)" />
+        <ellipse cx="140" cy="210" rx="38" ry="110" fill="#1B2E4B" opacity="0.07" transform="rotate(-30 140 210)" />
+        <ellipse cx="560" cy="210" rx="38" ry="110" fill="#1B2E4B" opacity="0.07" transform="rotate(30 560 210)" />
+        <ellipse cx="80" cy="100" rx="22" ry="68" fill="#2A4365" opacity="0.06" transform="rotate(-48 80 100)" />
+        <ellipse cx="620" cy="100" rx="22" ry="68" fill="#2A4365" opacity="0.06" transform="rotate(48 620 100)" />
+        <ellipse cx="95" cy="330" rx="20" ry="58" fill="#3A6B9C" opacity="0.05" transform="rotate(-20 95 330)" />
+        <ellipse cx="605" cy="330" rx="20" ry="58" fill="#3A6B9C" opacity="0.05" transform="rotate(20 605 330)" />
         <!-- centre gold circle -->
         <circle cx="350" cy="210" r="8" fill="#C8A35A" opacity="0.12" />
         <!-- thin stems -->
-        <line x1="350" y1="100" x2="350" y2="320" stroke="#8E6F62" stroke-width="0.8" opacity="0.12" />
-        <line x1="200" y1="210" x2="500" y2="210" stroke="#8E6F62" stroke-width="0.8" opacity="0.12" />
+        <line x1="350" y1="100" x2="350" y2="320" stroke="#5B7494" stroke-width="0.8" opacity="0.12" />
+        <line x1="200" y1="210" x2="500" y2="210" stroke="#5B7494" stroke-width="0.8" opacity="0.12" />
       </svg>
     </div>
 
@@ -1403,10 +1403,10 @@
           <div class="ld-divider-line"></div>
           <svg viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg" width="72">
             <circle cx="40" cy="15" r="5" fill="#C8A35A" opacity="0.75" />
-            <ellipse cx="24" cy="11" rx="4" ry="7.5" fill="#8E6F62" opacity="0.65" transform="rotate(-22 24 11)" />
-            <ellipse cx="56" cy="11" rx="4" ry="7.5" fill="#8E6F62" opacity="0.65" transform="rotate(22 56 11)" />
-            <ellipse cx="13" cy="19" rx="2.8" ry="6" fill="#A24F45" opacity="0.5" transform="rotate(-38 13 19)" />
-            <ellipse cx="67" cy="19" rx="2.8" ry="6" fill="#A24F45" opacity="0.5" transform="rotate(38 67 19)" />
+            <ellipse cx="24" cy="11" rx="4" ry="7.5" fill="#5B7494" opacity="0.65" transform="rotate(-22 24 11)" />
+            <ellipse cx="56" cy="11" rx="4" ry="7.5" fill="#5B7494" opacity="0.65" transform="rotate(22 56 11)" />
+            <ellipse cx="13" cy="19" rx="2.8" ry="6" fill="#3A6B9C" opacity="0.5" transform="rotate(-38 13 19)" />
+            <ellipse cx="67" cy="19" rx="2.8" ry="6" fill="#3A6B9C" opacity="0.5" transform="rotate(38 67 19)" />
           </svg>
           <div class="ld-divider-line"></div>
         </div>
@@ -1515,11 +1515,11 @@
         <div class="bot-divider">
           <div class="bot-line"></div>
           <svg viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="15" r="5" fill="#C8A96E" opacity="0.75" />
-            <ellipse cx="24" cy="11" rx="4" ry="7.5" fill="#8FA889" opacity="0.65" transform="rotate(-22 24 11)" />
-            <ellipse cx="56" cy="11" rx="4" ry="7.5" fill="#8FA889" opacity="0.65" transform="rotate(22 56 11)" />
-            <ellipse cx="13" cy="19" rx="2.8" ry="6" fill="#C9927A" opacity="0.5" transform="rotate(-38 13 19)" />
-            <ellipse cx="67" cy="19" rx="2.8" ry="6" fill="#C9927A" opacity="0.5" transform="rotate(38 67 19)" />
+            <circle cx="40" cy="15" r="5" fill="#C8A35A" opacity="0.75" />
+            <ellipse cx="24" cy="11" rx="4" ry="7.5" fill="#5B7494" opacity="0.65" transform="rotate(-22 24 11)" />
+            <ellipse cx="56" cy="11" rx="4" ry="7.5" fill="#5B7494" opacity="0.65" transform="rotate(22 56 11)" />
+            <ellipse cx="13" cy="19" rx="2.8" ry="6" fill="#3A6B9C" opacity="0.5" transform="rotate(-38 13 19)" />
+            <ellipse cx="67" cy="19" rx="2.8" ry="6" fill="#3A6B9C" opacity="0.5" transform="rotate(38 67 19)" />
           </svg>
           <div class="bot-line"></div>
         </div>
