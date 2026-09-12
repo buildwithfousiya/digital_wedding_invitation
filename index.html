@@ -19,31 +19,31 @@
        ============================================================ -->
 
   <!-- Page title (also used by OG as fallback) -->
-  <title>Sharafali & Fasna — Wedding Invitation</title>
+  <title>Mohammed Niyas &amp; Fathima Fahma — Wedding Invitation</title>
 
   <!-- Basic SEO description -->
   <meta name="description"
-    content="You are warmly invited to the Wedding of Sharafali &amp; Fasna on Thursday, August 20, 2026. Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna. Wedding Reception: 12:00 PM at PCM Auditorium, Valiyora, Vengara." />
+    content="You are warmly invited to the Nikkah Ceremony of Mohammed Niyas &amp; Fathima Fahma on Thursday, September 17, 2026 at 10:00 AM at Al Noor Auditorium, Parappur, Vengara." />
 
   <!-- ── Open Graph (Facebook, WhatsApp, Telegram, LinkedIn, etc.) ── -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Wedding Invitation" />
-  <meta property="og:title" content="Sharafali &amp; Fasna — Wedding Invitation" />
+  <meta property="og:title" content="Mohammed Niyas &amp; Fathima Fahma — Wedding Invitation" />
   <meta property="og:description"
-    content="You are warmly invited to the Wedding of Sharafali &amp; Fasna on Thursday, August 20, 2026. Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna. Wedding Reception: 12:00 PM at PCM Auditorium, Valiyora, Vengara." />
+    content="You are warmly invited to the Nikkah Ceremony of Mohammed Niyas &amp; Fathima Fahma on Thursday, September 17, 2026 at 10:00 AM at Al Noor Auditorium, Parappur, Vengara." />
   <meta property="og:url" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/" />
-  <meta property="og:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/blank.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1" />
-  <meta property="og:image:height" content="1" />
+  <meta property="og:image" content="cover.jpeg" />
+  <meta property="og:image:secure_url" content="cover.jpeg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Mohammed Niyas &amp; Fathima Fahma — Wedding Invitation" />
   <meta property="og:locale" content="en_US" />
 
   <!-- ── Twitter / X Card ── -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sharafali &amp; Fasna — Wedding Invitation" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mohammed Niyas &amp; Fathima Fahma — Wedding Invitation" />
   <meta name="twitter:description"
-    content="You are warmly invited to the Wedding of Sharafali &amp; Fasna on Thursday, August 20, 2026. Nikkah: 10:30 AM at Alwan Convention Centre, Perumanna. Wedding Reception: 12:00 PM at PCM Auditorium, Valiyora, Vengara." />
-  <meta name="twitter:image" content="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/blank.png" />
+    content="You are warmly invited to the Nikkah Ceremony of Mohammed Niyas &amp; Fathima Fahma on Thursday, September 17, 2026 at 10:00 AM at Al Noor Auditorium, Parappur, Vengara." />
+  <meta name="twitter:image" content="cover.jpeg" />
 
   <!-- Canonical URL — root, no /index.html -->
   <link rel="canonical" href="https://swalih-rahman-and-ayisha-adabiyya.vercel.app/" />
@@ -518,18 +518,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center 65%;
     }
 
-    /* Dark overlay so text is legible over the photo */
+    /* Subtle overlay so text is legible while image remains crisp and fully visible */
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom,
-          rgba(30, 24, 14, 0.35) 0%,
-          rgba(30, 24, 14, 0.45) 50%,
-          rgba(30, 24, 14, 0.65) 100%);
+          rgba(30, 24, 14, 0.28) 0%,
+          rgba(30, 24, 14, 0.18) 45%,
+          rgba(30, 24, 14, 0.48) 100%);
     }
 
     .hero-content {
@@ -741,22 +741,41 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 1.1rem;
+      gap: 1rem;
     }
 
     .person-img {
-      width: clamp(155px, 32vw, 230px);
-      height: clamp(155px, 32vw, 230px);
+      position: relative;
+      width: clamp(140px, 30vw, 190px);
+      height: clamp(140px, 30vw, 190px);
       border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--gold-light);
-      box-shadow: 0 8px 40px rgba(61, 90, 62, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FAF7F2;
+      border: 1.5px solid rgba(200, 163, 90, 0.4);
+      box-shadow: 0 4px 20px rgba(81, 19, 12, 0.07);
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .person-img img {
+    .person-card:hover .person-img {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 28px rgba(81, 19, 12, 0.12);
+    }
+
+    .emblem-svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      display: block;
+    }
+
+    .emblem-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 54px;
+      font-weight: 500;
+      font-style: italic;
+      fill: var(--green);
     }
 
     .person-role {
@@ -1396,13 +1415,13 @@
 
         <!-- Names in Great Vibes — mirrors the hero -->
         <div class="ld-names">
-          Sharafali
+          Mohammed Niyas
           <span class="ld-amp">&</span>
-          Fasna
+          Fathima Fahma
         </div>
 
         <!-- Date — mirrors hero-date -->
-        <p class="ld-date">Nikkah &amp; Wedding &nbsp;·&nbsp; August 20, 2026</p>
+        <p class="ld-date">Nikkah Ceremony &nbsp;·&nbsp; September 17, 2026</p>
 
         <!-- bottom gold bar -->
         <div class="ld-card-bar-btm"></div>
@@ -1449,17 +1468,17 @@
     <!-- ===== HERO — full background image ===== -->
     <section id="hero">
       <div class="hero-bg">
-        <img src="hero.jpg" alt="Sharafali & Fasna" />
+        <img src="hero.jpg" alt="Mohammed Niyas &amp; Fathima Fahma" />
       </div>
 
       <div class="hero-content">
-        <p class="hero-eyebrow">Kindly join us for the Wedding of</p>
+        <p class="hero-eyebrow">Kindly join us for the Nikkah Ceremony of</p>
         <div class="hero-names">
-          Sharafali
+          Mohammed Niyas
           <span class="hero-amp">&</span>
-          Fasna
+          Fathima Fahma
         </div>
-        <p class="hero-date">August 20, 2026 &nbsp;·&nbsp; 10:30 AM</p>
+        <p class="hero-date">September 17, 2026 &nbsp;·&nbsp; 10:00 AM</p>
         <!-- Guest greeting on hero if present -->
         <div id="hero-guest-wrap" style="display: none; margin-top: 1.5rem; text-align: center; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.85s forwards; opacity: 0;">
           <p style="font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(250, 247, 242, 0.6);">Warm Welcome To</p>
@@ -1536,66 +1555,24 @@
           <!-- GROOM -->
           <div class="person-card reveal">
             <div class="person-img">
-              <svg viewBox="0 0 100 100" class="avatar-svg" aria-label="Groom Avatar" style="width: 100%; height: 100%; display: block; background: var(--ivory-dark);">
-                <defs>
-                  <radialGradient id="groomGrad" cx="50%" cy="40%" r="60%" fx="50%" fy="30%">
-                    <stop offset="0%" stop-color="#FAF7F2" stop-opacity="0.8" />
-                    <stop offset="100%" stop-color="var(--ivory-dark)" />
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#groomGrad)" />
-                <circle cx="50" cy="38" r="16" fill="var(--green)" opacity="0.15" />
-                <circle cx="50" cy="38" r="16" fill="none" stroke="var(--green)" stroke-width="1.5" />
-                <path d="M 22 80 C 22 62, 32 56, 50 56 C 68 56, 78 62, 78 80 Z" fill="var(--green)" opacity="0.15" />
-                <path d="M 22 80 C 22 62, 32 56, 50 56 C 68 56, 78 62, 78 80" fill="none" stroke="var(--green)" stroke-width="1.5" />
-                <!-- Mandarin collar (Sherwani) -->
-                <path d="M 42 56 Q 50 60 58 56" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" />
-                <path d="M 42 58 L 42 64 Q 50 68 58 64 L 58 58" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.5" />
-                <!-- Buttons -->
-                <circle cx="50" cy="63" r="1.5" fill="var(--gold)" />
-                <circle cx="50" cy="69" r="1.5" fill="var(--gold)" />
-                <circle cx="50" cy="75" r="1.5" fill="var(--gold)" />
+              <svg viewBox="0 0 120 120" class="emblem-svg" aria-label="Mohammed Niyas - Groom Logo">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="var(--gold-light)" stroke-width="1" opacity="0.55" />
+                <text x="60" y="62" class="emblem-text" text-anchor="middle" dominant-baseline="central">N</text>
               </svg>
             </div>
             <span class="person-role">Groom</span>
-            <h3 class="person-name">Sharafali</h3>
-            <p class="person-lineage">
-              Son of<br />
-              Mr. Abdu Razack &amp; Mrs. Shemeema
-            </p>
+            <h3 class="person-name">Mohammed Niyas</h3>
           </div>
           <!-- BRIDE -->
           <div class="person-card reveal">
             <div class="person-img">
-              <svg viewBox="0 0 100 100" class="avatar-svg" aria-label="Bride Avatar" style="width: 100%; height: 100%; display: block; background: var(--ivory-dark);">
-                <defs>
-                  <radialGradient id="brideGrad" cx="50%" cy="40%" r="60%" fx="50%" fy="30%">
-                    <stop offset="0%" stop-color="#FAF7F2" stop-opacity="0.8" />
-                    <stop offset="100%" stop-color="var(--ivory-dark)" />
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#brideGrad)" />
-                <!-- Silhouette draped hijab covering head and shoulders -->
-                <path d="M 50 20 C 37 20, 31 32, 31 46 C 31 59, 21 68, 21 80 C 25 80, 75 80, 79 80 C 79 68, 69 59, 69 46 C 69 32, 63 20, 50 20 Z" fill="var(--green)" opacity="0.15" />
-                <path d="M 50 20 C 37 20, 31 32, 31 46 C 31 59, 21 68, 21 80" fill="none" stroke="var(--green)" stroke-width="1.5" />
-                <path d="M 50 20 C 63 20, 69 32, 69 46 C 69 59, 79 68, 79 80" fill="none" stroke="var(--green)" stroke-width="1.5" />
-                <!-- Gold lace border on headscarf -->
-                <path d="M 33 46 C 35 25, 65 25, 67 46" fill="none" stroke="var(--gold)" stroke-width="2" />
-                <path d="M 31 46 C 33 22, 67 22, 69 46" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.5" />
-                <!-- Forehead ornament (Maang Tikka) -->
-                <line x1="50" y1="22" x2="50" y2="31" stroke="var(--gold)" stroke-width="1.2" />
-                <circle cx="50" cy="34" r="2" fill="var(--gold)" />
-                <!-- Elegant necklace details -->
-                <path d="M 40 66 C 40 71, 60 71, 60 66" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M 37 71 C 37 77, 63 77, 63 71" fill="none" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.7" />
+              <svg viewBox="0 0 120 120" class="emblem-svg" aria-label="Fathima Fahma - Bride Logo">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="var(--gold-light)" stroke-width="1" opacity="0.55" />
+                <text x="60" y="62" class="emblem-text" text-anchor="middle" dominant-baseline="central">F</text>
               </svg>
             </div>
             <span class="person-role">Bride</span>
-            <h3 class="person-name">Fasna</h3>
-            <p class="person-lineage">
-              Daughter of<br />
-              Mr. Moideen Kutty &amp; Mrs. Ramla
-            </p>
+            <h3 class="person-name">Fathima Fahma</h3>
           </div>
         </div>
       </div>
@@ -1657,64 +1634,31 @@
         <p class="sec-sub">Join us as we celebrate this cherished occasion.</p>
 
         <!-- EVENTS GRID -->
-        <div class="events-grid">
+        <div class="events-grid" style="display: flex; justify-content: center;">
           
           <!-- NIKKAH CARD -->
-          <div class="event-card reveal">
+          <div class="event-card reveal" style="width: 100%; max-width: 520px;">
             <div class="ev-name">Nikkah</div>
             <div class="ev-rows">
               <div class="ev-row">
                 <span class="ev-icon">&#x1F4C5;</span>
-                <span class="ev-text">Thursday, August 20th, 2026</span>
+                <span class="ev-text">Thursday, September 17th, 2026</span>
               </div>
               <div class="ev-row">
                 <span class="ev-icon">&#x23F0;</span>
-                <span class="ev-text">10:30 AM</span>
+                <span class="ev-text">10:00 AM</span>
               </div>
               <div class="ev-row">
                 <span class="ev-icon">&#x1F3E2;</span>
-                <span class="ev-text">Alwan Convention Centre<br />Perumanna, Mundiyanthara</span>
+                <span class="ev-text">Al Noor Auditorium<br />Parappur, Vengara</span>
               </div>
             </div>
 
             <!-- Venue map photo + Google Maps button -->
             <div class="map-container">
-              <img src="map_nikkah.png" alt="Alwan Convention Centre Perumanna location map" />
+              <img src="map_nikkah.png" alt="Al Noor Auditorium, Parappur, Vengara location map" />
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Alwan+Convention+Centre+Perumanna+Mundiyanthara" target="_blank" rel="noopener noreferrer"
-              class="map-open-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              Open in Google Maps
-            </a>
-          </div>
-
-          <!-- WEDDING CARD -->
-          <div class="event-card reveal">
-            <div class="ev-name">Wedding</div>
-            <div class="ev-rows">
-              <div class="ev-row">
-                <span class="ev-icon">&#x1F4C5;</span>
-                <span class="ev-text">Thursday, August 20th, 2026</span>
-              </div>
-              <div class="ev-row">
-                <span class="ev-icon">&#x23F0;</span>
-                <span class="ev-text">12:00 PM onwards</span>
-              </div>
-              <div class="ev-row">
-                <span class="ev-icon">&#x1F3E2;</span>
-                <span class="ev-text">PCM Auditorium<br />Valiyora, Vengara</span>
-              </div>
-            </div>
-
-            <!-- Venue map photo + Google Maps button -->
-            <div class="map-container">
-              <img src="map.png" alt="PCM Auditorium Valiyora location map" />
-            </div>
-            <a href="https://maps.app.goo.gl/ybgFfQUQYRGH8dYu7" target="_blank" rel="noopener noreferrer"
+            <a href="https://maps.app.goo.gl/bv2WCnixEk8nkmpN6" target="_blank" rel="noopener noreferrer"
               class="map-open-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -1729,7 +1673,7 @@
 
         <!-- scroll arrow → footer -->
         <div class="sec-arrow" style="margin-top:1.2rem;">
-          <a href="footer" aria-label="Scroll to footer">
+          <a href="#footer" aria-label="Scroll to footer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
@@ -1742,7 +1686,7 @@
 
     <!-- ===== FOOTER ===== -->
     <footer id="footer">
-      <div class="footer-names">Sharafali & Fasna</div>
+      <div class="footer-names">Mohammed Niyas &amp; Fathima Fahma</div>
       <p class="footer-sub">With Regards From: Families & Friends</p>
       <p class="footer-copy">Made with love & duas &nbsp;✨</p>
     </footer>
@@ -1849,7 +1793,7 @@
       })();
 
       /* — Countdown Timer — */
-      const wedding = new Date('2026-08-20T10:30:00+05:30');
+      const wedding = new Date('2026-09-17T10:00:00+05:30');
       const pad = n => String(n).padStart(2, '0');
       function tick() {
         const diff = wedding - Date.now();
